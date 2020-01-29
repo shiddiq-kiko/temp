@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/menus/<%= result.id %>/edit" method="post">
+        <label > name :</label> <br>
+        <input type="text" name="name" value="<%= result.name %>"><br>
+        <label > Menu Type :</label> <br>
+        <input type="text" name="menu_type" value="<%= result.menu_type %>"><br>
+        <label > Rating :</label> <br>
+        <input type="text" name="rating" value="<%= result.rating %>"><br>
+        <label > Price :</label> <br>
+        <input type="text" name="price" value="<%= result.price %>"><br>
+        <label > Restaurant :</label> <br>
+        <label > <%= result.RestaurantId %></label>
+        <select name="RestaurantId">
+            <option value="1">Hokben</option>
+            <option value="2">KFC</option>
+            <option value="3">Yoshinoya</option>
+        </select>
+        <br>
+        <input type="submit" value="Add">
+    </form>
+</body>
+</html>

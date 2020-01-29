@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Restaurant Ku</title>
+</head>
+<body>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Name</th>
+                    <th>Menu Type</th>
+                    <th>Rating</th>
+                    <th>Price</th>
+                    <th>Restaurant Id</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% result.map(data => { %> 
+                    <tr>
+                        <td><%= data.id %></td>
+                        <td><%= data.name %></td>
+                        <td><%= data.menu_type %></td>
+                        <td><%= data.rating %></td>
+                        <td><%= data.price %></td>
+                        <td><%= data.RestaurantId %></td>
+                        <td><a href="/menus/<%= data.id %>/edit">Edit</a> | <a href="/menus/<%= data.id %>/delete">Delete</a></td>
+                    </tr>
+                <%})%>
+            </tbody>
+        </table>
+        <br><br>
+        <form action="/menus" method="post">
+            <label > name :</label> <br>
+            <input type="text" name="name"><br>
+            <label > Menu Type :</label> <br>
+            <input type="text" name="menu_type"><br>
+            <label > Rating :</label> <br>
+            <input type="number" name="rating"><br>
+            <label > Price :</label> <br>
+            <input type="number" name="price"><br>
+            <label > Restaurant :</label> <br>
+            <select name="RestaurantId">
+                <option value="1">Hokben</option>
+                <option value="2">KFC</option>
+                <option value="3">Yoshinoya</option>
+            </select>
+            <br>
+            <input type="submit" value="Add">
+        </form>
+    </main>
+</body>
+</html>

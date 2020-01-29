@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('partials/head.ejs') %>
+    </head>
+    <body class="bg">
+        <%- include('partials/header.ejs') %>
+        <main>
+            <br><br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+    
+                    </div>
+                    <div class="col-sm">
+                        <div class="bg-light card card-signup z-depth-0">
+                            <div class="card-body text-center">
+                                <h1>Add Form</h1>
+                                <% if(error){ %> 
+                                    <% if(error[0].message){ %>
+                                        <% error.map(data => { %>
+                                            <p class="text-danger"><%= data.message %></p>
+                                        <% }) %>
+                                    <% } else{ %>
+                                        <p class="text-danger"><%= error %></p> 
+                                    <% } %>
+                                <%}%>
+                                <form action="/contacts/add" method="post">
+                                    <label>First Name</label><br>
+                                    <input type="text" name="first_name"><br>
+                                    <label>Last Name</label><br>
+                                    <input type="text" name="last_name"><br>
+                                    <label>Phone Number</label><br>
+                                    <input type="text" name="phone_number"><br>
+                                    <label>Phone Number 2</label><br>
+                                    <input type="text" name="phone_number_2"><br>
+                                    <label>Work Period</label><br>
+                                    <input type="number" name="work_period"><br>
+                                    <label>Phase</label><br>
+                                    <label>Phase 0</label> : <input type="checkbox" name="phases" value="0">
+                                    <label>Phase 1</label> : <input type="checkbox" name="phases" value="1"><br>
+                                    <label>Phase 2</label> : <input type="checkbox" name="phases" value="2">
+                                    <label>Phase 3</label> : <input type="checkbox" name="phases" value="3"><br>
+                                    <label>Email</label><br>
+                                    <input type="text" name="email" ><br><br>
+                                    <input type="submit" value="submit">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        
+                    </div>
+                </div>
+            </div>
+        </main>
+        <br><br>
+        <%- include('partials/jquery.ejs') %>
+    </body>
+</html>

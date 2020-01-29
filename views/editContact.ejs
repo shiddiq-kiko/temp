@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('partials/head.ejs') %>
+    </head>
+    <body class="bg">
+        <%- include('partials/header.ejs') %>
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        
+                    </div>
+                    <div class="col-sm">
+                        <br><br>
+                        <div class="card card-signup a-depth-0 bg-light">
+                            <div class="card-body text-center">
+                                <h1>Edit Form</h1>
+                                <form action="/contacts/edit/<%= result.id %>" method="post" class="form ">
+                                    <label>First Name</label><br>
+                                    <input type="text" name="first_name" value="<%= result.first_name %>"><br>
+                                    <label>Last Name</label><br>
+                                    <input type="text" name="last_name" value="<%= result.last_name %>"><br>
+                                    <label>Phone Number</label><br>
+                                    <input type="text" name="phone_number" value="<%= result.phone_number %>"><br>
+                                    <label>Phone Number 2</label><br>
+                                    <input type="text" name="phone_number_2" value="<%= result.phone_number_2 %>"><br>
+                                    <label>Work Period</label><br>
+                                    <input type="number" name="work_period" value="<%= result.work_period %>"><br>
+                                    <label>Phase</label><br>
+                                    <% if(filtered[0] === true) { %> 
+                                        <label>Phase 0</label> : <input type="checkbox" name="phases" value="0" checked>
+                                    <%} else {%>
+                                        <label>Phase 0</label> : <input type="checkbox" name="phases" value="0" >
+                                    <% } %>
+                                    <% if(filtered[1] === true) { %> 
+                                        <label>Phase 1</label> : <input type="checkbox" name="phases" value="1" checked><br>
+                                    <%} else {%>
+                                        <label>Phase 1</label> : <input type="checkbox" name="phases" value="1" ><br>
+                                    <% } %>
+                                    <% if(filtered[2] === true) { %> 
+                                        <label>Phase 2</label> : <input type="checkbox" name="phases" value="2" checked>
+                                    <%} else {%>
+                                        <label>Phase 2</label> : <input type="checkbox" name="phases" value="2" >
+                                    <% } %>
+                                    <% if(filtered[3] === true) { %> 
+                                        <label>Phase 3</label> : <input type="checkbox" name="phases" value="3" checked><br>
+                                    <%} else {%>
+                                        <label>Phase 3</label> : <input type="checkbox" name="phases" value="3" ><br>
+                                    <% } %>
+                                    <label>Email</label><br>
+                                    <input type="text" name="email" value="<%= result.email %>"><br><br>
+                                    <input type="submit" value="submit">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        
+                    </div>
+                </div>
+            </div>
+        </main>
+        <br><br>
+        <%- include('partials/jquery.ejs') %>
+    </body>
+</html>
